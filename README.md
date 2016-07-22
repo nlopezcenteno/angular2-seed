@@ -8,6 +8,10 @@
 [![Dependency Status](https://david-dm.org/mgechev/angular2-seed.svg)](https://david-dm.org/mgechev/angular2-seed)
 [![devDependency Status](https://david-dm.org/mgechev/angular2-seed/dev-status.svg)](https://david-dm.org/mgechev/angular2-seed#info=devDependencies)
 
+
+Extension of [https://github.com/mgechev/angular2-seed](https://github.com/mgechev/angular2-seed) 
+- Add [ng2-bootstrap](https://github.com/valor-software/ng2-bootstrap)
+
 Provides fast, reliable and extensible starter for the development of Angular 2 projects.
 
 `angular2-seed` provides the following features:
