@@ -34,6 +34,21 @@ export class ProjectConfig extends SeedConfig {
 
     /* Add to or override NPM module configurations: */
     // this.mergeObject(this.PLUGIN_CONFIGS['browser-sync'], { ghostMode: false });
+
+    this.SYSTEM_CONFIG_DEV.paths['ng2-bootstrap'] =
+      `${this.APP_BASE}node_modules/ng2-bootstrap/ng2-bootstrap`;
+
+    this.SYSTEM_BUILDER_CONFIG.packages['ng2-bootstrap'] = {
+        main: 'ng2-bootstrap.js',
+        defaultExtension : 'js'
+    };
+    this.SYSTEM_CONFIG_DEV.paths['moment'] =
+      `${this.APP_BASE}node_modules/moment/moment`;
+
+    this.SYSTEM_BUILDER_CONFIG.packages['moment'] = {
+        main: 'moment.js',
+        defaultExtension : 'js'
+    };
   }
 
 }
