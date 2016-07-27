@@ -63,7 +63,6 @@ export class ProjectConfig extends SeedConfig {
       main: 'angular2-jwt.js',
       defaultExtension: 'js'
     };
-
   }
 
 }
