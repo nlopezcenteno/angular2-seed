@@ -10,6 +10,12 @@ export class ProjectConfig extends SeedConfig {
 
   PROJECT_TASKS_DIR = join(process.cwd(), this.TOOLS_DIR, 'tasks', 'project');
 
+  FONTS_DEST = `${this.APP_DEST}/fonts`;
+  FONTS_SRC = [
+    'node_modules/bootstrap/dist/fonts/**',
+    'node_modules/font-awesome/fonts/**'
+  ];
+
   constructor() {
     super();
     // this.APP_TITLE = 'Put name of your app here';
@@ -22,7 +28,8 @@ export class ProjectConfig extends SeedConfig {
       ...this.NPM_DEPENDENCIES,
       // {src: 'jquery/dist/jquery.min.js', inject: 'libs'},
       // {src: 'lodash/lodash.min.js', inject: 'libs'},
-      { src: 'bootstrap/dist/css/bootstrap.min.css', inject: true }
+      { src: 'bootstrap/dist/css/bootstrap.min.css', inject: true },
+      { src: 'font-awesome/css/font-awesome.min.css', inject: true }
     ];
 
     // Add `local` third-party libraries to be injected/bundled.
@@ -39,23 +46,24 @@ export class ProjectConfig extends SeedConfig {
       `${this.APP_BASE}node_modules/ng2-bootstrap/ng2-bootstrap`;
 
     this.SYSTEM_BUILDER_CONFIG.packages['ng2-bootstrap'] = {
-        main: 'ng2-bootstrap.js',
-        defaultExtension : 'js'
+      main: 'ng2-bootstrap.js',
+      defaultExtension: 'js'
     };
     this.SYSTEM_CONFIG_DEV.paths['moment'] =
       `${this.APP_BASE}node_modules/moment/moment`;
 
     this.SYSTEM_BUILDER_CONFIG.packages['moment'] = {
-        main: 'moment.js',
-        defaultExtension : 'js'
+      main: 'moment.js',
+      defaultExtension: 'js'
     };
     this.SYSTEM_CONFIG_DEV.paths['angular2-jwt'] =
       `${this.APP_BASE}node_modules/angular2-jwt/angular2-jwt`;
 
     this.SYSTEM_BUILDER_CONFIG.packages['angular2-jwt'] = {
-        main: 'angular2-jwt.js',
-        defaultExtension : 'js'
+      main: 'angular2-jwt.js',
+      defaultExtension: 'js'
     };
+
   }
 
 }
