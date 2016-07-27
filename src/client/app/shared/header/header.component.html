@@ -1,19 +1,29 @@
 <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" (click)="isCollapsed = !isCollapsed" aria-expanded="false" aria-controls="navbar">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" (click)="isCollapsed = !isCollapsed" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Project name</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse" [collapse]="isCollapsed" (click)="isCollapsed=true">
-          <ul class="nav navbar-nav">
-            <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/']">HOME</a></li>			
-            <li routerLinkActive="active"><a [routerLink]="['/about']">ABOUT</a></li>
+      <a class="navbar-brand" href="#">Project name</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse" [collapse]="isCollapsed" (click)="isCollapsed=true">
+      <ul class="nav navbar-nav">
+        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/']">HOME</a></li>
+        <li routerLinkActive="active"><a [routerLink]="['/about']">ABOUT</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li *ngIf="!auth.authenticated()"><a class="btn btn-link" (click)="auth.login()"><span class="fa fa-user"></span> entrar</a></li>
+        <li class="dropdown" *ngIf="auth.authenticated()" dropdown>
+          <a class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false" dropdownToggle><img src="{{auth?.profile?.picture}}" class="img-circle user-profile-image" /> <span>{{auth?.profile?.name}}</span> <span class="caret"></span></a>
+          <ul class="dropdown-menu" dropdownMenu>
+            <li><a class="btn btn-link" (click)="auth.logout()">salir</a></li>
           </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
+        </li>
+      </ul>
+    </div>
+    <!--/.nav-collapse -->
+  </div>
+</nav>

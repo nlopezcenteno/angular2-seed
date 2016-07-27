@@ -29,11 +29,33 @@ export class ProjectConfig extends SeedConfig {
     this.APP_ASSETS = [
       ...this.APP_ASSETS,
       // {src: `${this.APP_SRC}/your-path-to-lib/libs/jquery-ui.js`, inject: true, vendor: false}
-      // {src: `${this.CSS_SRC}/path-to-lib/test-lib.css`, inject: true, vendor: false},
+      // {src: `${this.CSS_SRC}/path-to-lib/test-lib.css`, inject: true, vendor: false}
     ];
 
     /* Add to or override NPM module configurations: */
     // this.mergeObject(this.PLUGIN_CONFIGS['browser-sync'], { ghostMode: false });
+
+    this.SYSTEM_CONFIG_DEV.paths['ng2-bootstrap'] =
+      `${this.APP_BASE}node_modules/ng2-bootstrap/ng2-bootstrap`;
+
+    this.SYSTEM_BUILDER_CONFIG.packages['ng2-bootstrap'] = {
+        main: 'ng2-bootstrap.js',
+        defaultExtension : 'js'
+    };
+    this.SYSTEM_CONFIG_DEV.paths['moment'] =
+      `${this.APP_BASE}node_modules/moment/moment`;
+
+    this.SYSTEM_BUILDER_CONFIG.packages['moment'] = {
+        main: 'moment.js',
+        defaultExtension : 'js'
+    };
+    this.SYSTEM_CONFIG_DEV.paths['angular2-jwt'] =
+      `${this.APP_BASE}node_modules/angular2-jwt/angular2-jwt`;
+
+    this.SYSTEM_BUILDER_CONFIG.packages['angular2-jwt'] = {
+        main: 'angular2-jwt.js',
+        defaultExtension : 'js'
+    };
   }
 
 }

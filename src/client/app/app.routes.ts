@@ -5,7 +5,8 @@ import { HomeRoutes } from './+home/index';
 
 const routes: RouterConfig = [
   ...HomeRoutes,
-  ...AboutRoutes
+  ...AboutRoutes,
+  { path: '**', redirectTo: '' }
 ];
 
 export const APP_ROUTER_PROVIDERS = [
