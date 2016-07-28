@@ -1,11 +1,17 @@
 {
   "dev": {
-    "API": "https://demo.com"
+    "API": "https://demo.com",
+    "Auth0ClientId": "YOUR_CLIENT_ID",
+    "Auth0Domain": "YOUR_DOMAIN"
   },
   "prod": {
-    "API": "https://prod.com"
+    "API": "https://prod.com",
+    "Auth0ClientId": "YOUR_CLIENT_ID",
+    "Auth0Domain": "YOUR_DOMAIN"
   },
   "staging": {
-    "API": "https://staging.com"
+    "API": "https://staging.com",
+    "Auth0ClientId": "YOUR_CLIENT_ID",
+    "Auth0Domain": "YOUR_DOMAIN"
   }
 }

@@ -2,12 +2,14 @@ import { Injectable }      from '@angular/core';
 import { Router, CanActivate } from '@angular/router';
 import { tokenNotExpired } from 'angular2-jwt';
 
+import { Config } from '../config/env.config';
+
 // Avoid name not found warnings
 declare var Auth0Lock: any;
 
 @Injectable()
 export class Auth {
-  lock = new Auth0Lock('vgUur3WmZzxwnGqdqulyfz3na6yNXADa', 'connection2cuba.auth0.com', {
+  lock = new Auth0Lock(Config.Auth0ClientId, Config.Auth0Domain, {
     auth: {
       params: {
         redirect: true,
